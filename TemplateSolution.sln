@@ -5,11 +5,16 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateSolution.Infrastructure", "TemplateSolution.Infrastructure\TemplateSolution.Infrastructure.csproj", "{505F63B6-280E-40A9-8F33-C02F67D5B9A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateSolution.Repository", "TemplateSolution.Repository\TemplateSolution.Repository.csproj", "{340F3847-780A-4366-BD7A-54058747D7D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateSolution.Repository", "TemplateSolution.Repository\TemplateSolution.Repository.csproj", "{340F3847-780A-4366-BD7A-54058747D7D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateSolution.App", "TemplateSolution.App\TemplateSolution.App.csproj", "{0532931C-DD90-41E2-8AEB-D5070AE00B96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateSolution.App", "TemplateSolution.App\TemplateSolution.App.csproj", "{0532931C-DD90-41E2-8AEB-D5070AE00B96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateSolution.WebApi", "TemplateSolution.WebApi\TemplateSolution.WebApi.csproj", "{C77F8EA3-9827-46D7-B8FC-D0A8319729C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateSolution.WebApi", "TemplateSolution.WebApi\TemplateSolution.WebApi.csproj", "{C77F8EA3-9827-46D7-B8FC-D0A8319729C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6551D134-CD1E-48FF-BBA8-C5E20AC8CA97}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
