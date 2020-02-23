@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using TemplateSolution.App;
+using TemplateSolution.Infrastructure;
+using TemplateSolution.WebApi.ViewModels;
 
 namespace TemplateSolution.WebApi.Controllers
 {
@@ -34,7 +36,8 @@ namespace TemplateSolution.WebApi.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            var a = _app.Get(1);
+            var a = _app.Get(1).MapTo<RawDataVM>();
+
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
