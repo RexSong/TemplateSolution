@@ -9,22 +9,24 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-variables:
+variables: 
   buildConfiguration: 'Release'
 
 
-stages:
+stages: 
   stage: Build
   jobs: 
     job: BuildJob
-      steps:
+    continueOnError: false
+      steps: 
         script: dotnet build --configuration $(buildConfiguration)
         displayName: 'dotnet build $(buildConfiguration)'
 
     job: Run Unit Test job
-      steps:
+    continueOnError: false
+      steps: 
         task: UnitTest
-        inputs:
+        inputs: 
           command: test
           projects: '**/*Test/*.csproj'
           arguments: '--configuration $(buildConfiguration)'
