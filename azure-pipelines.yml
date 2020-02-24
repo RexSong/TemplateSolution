@@ -13,6 +13,20 @@ variables:
   buildConfiguration: 'Release'
 
 
-steps: 
-  script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+stages: 
+- stage: Build
+  jobs: 
+  - job: BuildJob
+    continueOnError: false
+    steps: 
+    - script: dotnet build --configuration $(buildConfiguration)
+      displayName: 'dotnet build $(buildConfiguration)'
+
+  - job: RunUnitTestjob
+    continueOnError: false
+    steps: 
+    - task: UnitTest
+      inputs: 
+        command: test
+        projects: '**/*Test/*.csproj'
+        arguments: '--configuration $(buildConfiguration)'
