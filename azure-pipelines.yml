@@ -25,7 +25,7 @@ stages:
   - job: RunUnitTestjob
     continueOnError: false
     steps: 
-    - task: UnitTest
+    - task: UnitTest@1
       inputs: 
         command: test
         projects: '**/*Test/*.csproj'
