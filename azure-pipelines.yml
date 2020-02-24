@@ -12,6 +12,19 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
-steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+
+stages:
+  stage: Build
+  jobs: 
+    job: BuildJob
+      steps:
+        script: dotnet build --configuration $(buildConfiguration)
+        displayName: 'dotnet build $(buildConfiguration)'
+
+    job: Run Unit Test job
+      steps:
+        task: UnitTest
+        inputs:
+          command: test
+          projects: '**/*Test/*.csproj'
+          arguments: '--configuration $(buildConfiguration)'
