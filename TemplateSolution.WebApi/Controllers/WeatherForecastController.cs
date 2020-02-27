@@ -12,7 +12,7 @@ using TemplateSolution.WebApi.ViewModels;
 namespace TemplateSolution.WebApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]/[action]")]
     public class WeatherForecastController : ControllerBase
     {
         private readonly RawDataManager _app;
@@ -46,6 +46,18 @@ namespace TemplateSolution.WebApi.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> LoadOne()
+        {
+            var a = new WeatherForecast
+            {
+                Date = DateTime.Now.AddDays(2),
+                TemperatureC = 20,
+                Summary = "dfdf"
+            };
+            return Ok(a);
         }
     }
 }
