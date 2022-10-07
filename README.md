@@ -1,0 +1,2 @@
+# TemplateSolution
+[![Build Status](https://dev.azure.com/rexsong0875/TemplateSolution/_apis/build/status/RexSong.TemplateSolution?branchName=master)](https://dev.azure.com/rexsong0875/TemplateSolution/_build/latest?definitionId=1&branchName=master)
